@@ -1,0 +1,43 @@
+.header-container {
+  background-color: #1e1e30;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-container {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-item {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.route-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0px;
+  width: 10%;
+}
+
+.list-item {
+  list-style-type: none;
+  color: #f8fafc;
+}
+
+.website-logo {
+  color: #ffffff;
+  font-family: 'Bree Serif';
+  font-size: 24px;
+}
+
+.logo-span-item {
+  color: #007bff;
+}

@@ -1,0 +1,18 @@
+.faq-list-item {
+  list-style-type: none;
+  font-family: 'Roboto';
+}
+
+.question {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #94a3b8;
+}
+
+.answer {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #007bff;
+}
