@@ -1,0 +1,48 @@
+.state-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px 5px 15px;
+  width: 100%;
+  list-style-type: none;
+}
+
+.state-link-item {
+  width: 25%;
+  color: #f1f5f9;
+  text-decoration: none;
+}
+
+.state-full-name {
+  width: 100%;
+}
+
+.state-confirmed {
+  width: 15%;
+  text-align: right;
+  color: #ff073a;
+}
+
+.state-active {
+  width: 15%;
+  text-align: right;
+  color: #007bff;
+}
+
+.state-deceased {
+  width: 15%;
+  text-align: right;
+  color: #28a745;
+}
+
+.state-recovered {
+  width: 15%;
+  text-align: right;
+  color: #6c757d;
+}
+
+.state-population {
+  width: 15%;
+  text-align: right;
+  color: #94a3b8;
+}

@@ -36,7 +36,7 @@ class About extends Component {
           </p>
           <ul className="faqs-list-container">
             {faqsList.map(faq => (
-              <FaqItem faqDetails={faq} />
+              <FaqItem key={faq.qno} faqDetails={faq} />
             ))}
           </ul>
         </div>
