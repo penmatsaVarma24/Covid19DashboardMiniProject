@@ -1,0 +1,447 @@
+.state-wise-main-container {
+  background-color: #161625;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.state-wise-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.state-name-tested-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+}
+
+.state-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.state-tested-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.state-wise-name {
+  background-color: #143f55;
+  color: #0ea5e9;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.last-updated {
+  color: #cbd5e1;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+.tested-para {
+  justify-self: flex-end;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.tested-count {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.state-cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.state-confirmed-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ff073a;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+  background-color: #331427;
+  border-radius: 5px;
+}
+
+.state-confirmed-heading {
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.state-confirmed-icon {
+  width: 24%;
+}
+
+.state-active-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 10px 30px 10px 30px;
+}
+
+.state-active-card:hover {
+  background-color: #16213e;
+  border-radius: 5px;
+}
+
+.state-active-heading {
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.state-active-icon {
+  width: 24%;
+}
+
+.state-recovered-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #28a745;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 10px 30px 10px 30px;
+}
+
+.state-recovered-card:hover {
+  background-color: #192829;
+  border-radius: 5px;
+}
+
+.state-recovered-heading {
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.state-recovered-icon {
+  width: 24%;
+}
+
+.state-deceased-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #6c757d;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px 30px 10px 30px;
+}
+
+.state-deceased-card:hover {
+  background-color: #212230;
+  border-radius: 5px;
+}
+
+.state-deceased-heading {
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.state-deceased-icon {
+  width: 24%;
+}
+
+.districts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+.districts-heading {
+  color: #ff073a;
+  margin-bottom: 10px;
+}
+
+.districts-list-container {
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.district-list-item {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.district-count-container {
+  align-self: flex-start;
+}
+
+.district-name-container {
+  justify-self: flex-start;
+  width: 60%;
+}
+
+.district-cases {
+  color: #94a3b8;
+}
+
+.district-name {
+  color: #94a3b8;
+  margin-left: 15px;
+}
+
+.charts-container {
+  width: 80%;
+}
+
+@media (max-width: 767px) {
+  .state-wise-name {
+    padding: 7px 16px 7px 16px;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .last-updated {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .tested-para {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .tested-count {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .state-cards-container {
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .state-confirmed-card {
+    width: 48%;
+  }
+
+  .state-confirmed-heading {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .state-confirmed-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-active-card {
+    width: 48%;
+  }
+
+  .state-active-heading {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .state-active-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-recovered-card {
+    width: 48%;
+  }
+
+  .state-recovered-heading {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .state-recovered-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-deceased-card {
+    width: 48%;
+  }
+
+  .state-deceased-heading {
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .state-deceased-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .districts-container {
+    margin-top: 20px;
+  }
+
+  .district-list-item {
+    width: 48%;
+  }
+
+  .district-cases {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  .district-name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .state-wise-name {
+    padding: 16px 26px 16px 26px;
+    border-radius: 40px;
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .last-updated {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .tested-para {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .tested-count {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .state-cards-container {
+    margin-top: 60px;
+  }
+
+  .state-confirmed-card {
+    width: 23%;
+  }
+
+  .state-confirmed-heading {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .state-confirmed-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-active-card {
+    width: 23%;
+  }
+
+  .state-active-heading {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .state-active-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-recovered-card {
+    width: 23%;
+  }
+
+  .state-recovered-heading {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .state-recovered-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-deceased-card {
+    width: 23%;
+  }
+
+  .state-deceased-heading {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .state-deceased-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .district-list-item {
+    width: 25%;
+  }
+
+  .district-count-container {
+    align-self: flex-start;
+  }
+
+  .district-cases {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #94a3b8;
+  }
+
+  .district-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #94a3b8;
+    margin-left: 15px;
+  }
+
+  .charts-container {
+    width: 80%;
+  }
+}

@@ -1,48 +1,108 @@
-.state-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 15px 5px 15px;
-  width: 100%;
-  list-style-type: none;
+@media (max-width: 767px) {
+  .state-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    min-width: 200px;
+    list-style-type: none;
+  }
+
+  .state-details-name-container {
+    display: flex;
+  }
+
+  .state-link-item {
+    color: #f1f5f9;
+    text-decoration: none;
+  }
+
+  .state-full-name {
+    width: 180px;
+    padding-left: 15px;
+  }
+
+  .state-confirmed {
+    width: 130px;
+    text-align: right;
+    color: #ff073a;
+  }
+
+  .state-active {
+    width: 130px;
+    text-align: right;
+    color: #007bff;
+  }
+
+  .state-deceased {
+    width: 130px;
+    text-align: right;
+    color: #28a745;
+  }
+
+  .state-recovered {
+    width: 130px;
+    text-align: right;
+    color: #6c757d;
+  }
+
+  .state-population {
+    width: 130px;
+    text-align: right;
+    color: #94a3b8;
+  }
 }
 
-.state-link-item {
-  width: 25%;
-  color: #f1f5f9;
-  text-decoration: none;
-}
+@media (min-width: 768px) {
+  .state-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    width: 100%;
+    list-style-type: none;
+  }
 
-.state-full-name {
-  width: 100%;
-}
+  .state-details-name-container {
+    width: 25%;
+  }
 
-.state-confirmed {
-  width: 15%;
-  text-align: right;
-  color: #ff073a;
-}
+  .state-table-column {
+    width: 15%;
+  }
 
-.state-active {
-  width: 15%;
-  text-align: right;
-  color: #007bff;
-}
+  .state-link-item {
+    width: 100%;
+    color: #f1f5f9;
+    text-decoration: none;
+  }
 
-.state-deceased {
-  width: 15%;
-  text-align: right;
-  color: #28a745;
-}
+  .state-full-name {
+    width: 100%;
+  }
 
-.state-recovered {
-  width: 15%;
-  text-align: right;
-  color: #6c757d;
-}
+  .state-confirmed {
+    text-align: right;
+    color: #ff073a;
+  }
 
-.state-population {
-  width: 15%;
-  text-align: right;
-  color: #94a3b8;
+  .state-active {
+    text-align: right;
+    color: #007bff;
+  }
+
+  .state-deceased {
+    text-align: right;
+    color: #28a745;
+  }
+
+  .state-recovered {
+    text-align: right;
+    color: #6c757d;
+  }
+
+  .state-population {
+    text-align: right;
+    color: #94a3b8;
+  }
 }

@@ -1,0 +1,147 @@
+.confirmed-background {
+  background-color: #331427;
+}
+.active-background {
+  background-color: #132240;
+}
+.recovered-background {
+  background-color: #182829;
+}
+.deceased-background {
+  background-color: #1c1c2b;
+}
+.tested-background {
+  background-color: #230f41;
+}
+
+.chart-mobile-version-wrapper {
+  display: none;
+}
+
+.mobile-graph {
+  display: none;
+}
+
+.barcharts-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.charts {
+  border-radius: 12px;
+  margin-bottom: 32px;
+  padding: 40px;
+  overflow: auto;
+  max-width: 90%;
+}
+
+.charts-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #cbd5e1;
+}
+
+.barchart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-wrapper {
+  overflow-x: auto;
+  width: 80%;
+}
+
+/* @media (max-width: 767px) {
+  .chart-wrapper {
+    display: none;
+  }
+
+  .barcharts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .charts {
+    border-radius: 12px;
+    margin-bottom: 32px;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .desktop-graph {
+    display: none;
+  }
+
+  .charts-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #cbd5e1;
+  }
+
+  .barchart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .chart-mobile-version-wrapper {
+    display: none;
+  }
+
+  .mobile-graph {
+    display: none;
+  }
+
+  .barcharts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .charts {
+    border-radius: 12px;
+    margin-bottom: 32px;
+    padding: 40px;
+    overflow-x: auto;
+  }
+
+  .charts-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    color: #cbd5e1;
+  }
+
+  .barchart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chart-wrapper {
+    overflow-x: auto;
+  }
+} */

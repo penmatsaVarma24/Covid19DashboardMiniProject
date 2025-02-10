@@ -6,27 +6,39 @@ import './index.css'
 
 class StateDetails extends Component {
   render() {
-    const {statesData, stateDetails} = this.props
-    if (statesData !== undefined) {
-      const stateCode = stateDetails.state_code
-      const filteredData = statesData[stateCode]
-      const {meta, total} = filteredData
-      const {confirmed, deceased, recovered} = total
-      const active = confirmed - deceased - recovered
-      return (
-        <li className="state-container">
+    const {statesData} = this.props
+    const {stateDetails} = this.props
+    const {stateCode} = stateDetails
+    const filteredData = statesData[stateCode]
+    console.log(filteredData)
+    const {meta, total} = filteredData
+    const {population} = meta
+    const {confirmed, deceased, recovered} = total
+    const active = confirmed - deceased - recovered
+    return (
+      <li className="state-container">
+        <div className="state-details-name-container">
           <Link to={`/state/${stateCode}`} className="state-link-item">
             <p className="state-full-name">{stateDetails.state_name}</p>
           </Link>
+        </div>
+        <div className="state-table-column">
           <p className="state-confirmed">{confirmed}</p>
+        </div>
+        <div className="state-table-column">
           <p className="state-active">{active}</p>
+        </div>
+        <div className="state-table-column">
           <p className="state-recovered">{recovered}</p>
+        </div>
+        <div className="state-table-column">
           <p className="state-deceased">{deceased}</p>
-          <p className="state-population">{meta.population}</p>
-        </li>
-      )
-    }
-    return null
+        </div>
+        <div className="state-table-column">
+          <p className="state-population">{population}</p>
+        </div>
+      </li>
+    )
   }
 }
 

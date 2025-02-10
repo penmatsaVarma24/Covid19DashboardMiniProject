@@ -11,8 +11,6 @@
 .footer-heading {
   color: #ffffff;
   font-family: 'Bree Serif';
-  font-size: 24px;
-  line-height: 32px;
 }
 
 .footer-span-item {
@@ -21,32 +19,79 @@
 
 .footer-description {
   color: #94a3b8;
-  font-size: 16px;
-  line-height: 24px;
 }
 
-.icons-container {
+.footer-icons-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 20%;
   padding: 20px;
 }
 
-.git-logo {
-  width: 42px;
-  height: 46px;
-  color: #cbd5e1;
+@media (max-width: 767px) {
+  .footer-icons-container {
+    width: 30%;
+  }
+
+  .footer-heading {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .git-logo {
+    width: 22px;
+    height: 25px;
+    color: #cbd5e1;
+  }
+
+  .insta-logo {
+    width: 23px;
+    height: 30px;
+    color: #cbd5e1;
+  }
+
+  .twitter-logo {
+    width: 24px;
+    height: 20px;
+    color: #cbd5e1;
+  }
+
+  .footer-description {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
-.insta-logo {
-  width: 47px;
-  height: 61px;
-  color: #cbd5e1;
-}
+@media (min-width: 768px) {
+  .footer-heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
 
-.twitter-logo {
-  width: 49px;
-  height: 40px;
-  color: #cbd5e1;
+  .footer-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .footer-icons-container {
+    width: 20%;
+  }
+
+  .git-logo {
+    width: 42px;
+    height: 46px;
+    color: #cbd5e1;
+  }
+
+  .insta-logo {
+    width: 47px;
+    height: 61px;
+    color: #cbd5e1;
+  }
+
+  .twitter-logo {
+    width: 49px;
+    height: 40px;
+    color: #cbd5e1;
+  }
 }

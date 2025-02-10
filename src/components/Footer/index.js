@@ -1,4 +1,6 @@
-import {FiGithub, FiInstagram} from 'react-icons/fi'
+import {FiInstagram} from 'react-icons/fi'
+
+import {VscGithubAlt} from 'react-icons/vsc'
 
 import {FaTwitter} from 'react-icons/fa'
 
@@ -16,8 +18,8 @@ const Footer = () => (
         we stand with everyone fighting on the front lines
       </p>
     </div>
-    <div className="icons-container">
-      <FiGithub className="git-logo" />
+    <div className="footer-icons-container">
+      <VscGithubAlt className="git-logo" />
       <FiInstagram className="insta-logo" />
       <FaTwitter className="twitter-logo" />
     </div>

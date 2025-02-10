@@ -1,6 +1,12 @@
 import {Component} from 'react'
 
-import {FaSearch, FaChevronRight} from 'react-icons/fa'
+import {Link} from 'react-router-dom'
+
+import {BiChevronRightSquare} from 'react-icons/bi'
+
+import {FcGenericSortingAsc, FcGenericSortingDesc} from 'react-icons/fc'
+
+import {BsSearch} from 'react-icons/bs'
 
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
@@ -11,149 +17,149 @@ import StateDetails from '../StateDetails'
 
 import './index.css'
 
-const statesList = [
+const initialStatesList = [
   {
-    state_code: 'AN',
+    stateCode: 'AN',
     state_name: 'Andaman and Nicobar Islands',
   },
   {
-    state_code: 'AP',
+    stateCode: 'AP',
     state_name: 'Andhra Pradesh',
   },
   {
-    state_code: 'AR',
+    stateCode: 'AR',
     state_name: 'Arunachal Pradesh',
   },
   {
-    state_code: 'AS',
+    stateCode: 'AS',
     state_name: 'Assam',
   },
   {
-    state_code: 'BR',
+    stateCode: 'BR',
     state_name: 'Bihar',
   },
   {
-    state_code: 'CH',
+    stateCode: 'CH',
     state_name: 'Chandigarh',
   },
   {
-    state_code: 'CT',
+    stateCode: 'CT',
     state_name: 'Chhattisgarh',
   },
   {
-    state_code: 'DN',
+    stateCode: 'DN',
     state_name: 'Dadra and Nagar Haveli and Daman and Diu',
   },
   {
-    state_code: 'DL',
+    stateCode: 'DL',
     state_name: 'Delhi',
   },
   {
-    state_code: 'GA',
+    stateCode: 'GA',
     state_name: 'Goa',
   },
   {
-    state_code: 'GJ',
+    stateCode: 'GJ',
     state_name: 'Gujarat',
   },
   {
-    state_code: 'HR',
+    stateCode: 'HR',
     state_name: 'Haryana',
   },
   {
-    state_code: 'HP',
+    stateCode: 'HP',
     state_name: 'Himachal Pradesh',
   },
   {
-    state_code: 'JK',
+    stateCode: 'JK',
     state_name: 'Jammu and Kashmir',
   },
   {
-    state_code: 'JH',
+    stateCode: 'JH',
     state_name: 'Jharkhand',
   },
   {
-    state_code: 'KA',
+    stateCode: 'KA',
     state_name: 'Karnataka',
   },
   {
-    state_code: 'KL',
+    stateCode: 'KL',
     state_name: 'Kerala',
   },
   {
-    state_code: 'LA',
+    stateCode: 'LA',
     state_name: 'Ladakh',
   },
   {
-    state_code: 'LD',
+    stateCode: 'LD',
     state_name: 'Lakshadweep',
   },
   {
-    state_code: 'MH',
+    stateCode: 'MH',
     state_name: 'Maharashtra',
   },
   {
-    state_code: 'MP',
+    stateCode: 'MP',
     state_name: 'Madhya Pradesh',
   },
   {
-    state_code: 'MN',
+    stateCode: 'MN',
     state_name: 'Manipur',
   },
   {
-    state_code: 'ML',
+    stateCode: 'ML',
     state_name: 'Meghalaya',
   },
   {
-    state_code: 'MZ',
+    stateCode: 'MZ',
     state_name: 'Mizoram',
   },
   {
-    state_code: 'NL',
+    stateCode: 'NL',
     state_name: 'Nagaland',
   },
   {
-    state_code: 'OR',
+    stateCode: 'OR',
     state_name: 'Odisha',
   },
   {
-    state_code: 'PY',
+    stateCode: 'PY',
     state_name: 'Puducherry',
   },
   {
-    state_code: 'PB',
+    stateCode: 'PB',
     state_name: 'Punjab',
   },
   {
-    state_code: 'RJ',
+    stateCode: 'RJ',
     state_name: 'Rajasthan',
   },
   {
-    state_code: 'SK',
+    stateCode: 'SK',
     state_name: 'Sikkim',
   },
   {
-    state_code: 'TN',
+    stateCode: 'TN',
     state_name: 'Tamil Nadu',
   },
   {
-    state_code: 'TG',
+    stateCode: 'TG',
     state_name: 'Telangana',
   },
   {
-    state_code: 'TR',
+    stateCode: 'TR',
     state_name: 'Tripura',
   },
   {
-    state_code: 'UP',
+    stateCode: 'UP',
     state_name: 'Uttar Pradesh',
   },
   {
-    state_code: 'UT',
+    stateCode: 'UT',
     state_name: 'Uttarakhand',
   },
   {
-    state_code: 'WB',
+    stateCode: 'WB',
     state_name: 'West Bengal',
   },
 ]
@@ -165,7 +171,11 @@ const apiStatusConstants = {
 }
 
 class Home extends Component {
-  state = {searchInput: '', apiStatus: apiStatusConstants.inprogress}
+  state = {
+    searchInput: '',
+    apiStatus: apiStatusConstants.inprogress,
+    statesList: initialStatesList,
+  }
 
   componentDidMount() {
     this.renderCovid19Api()
@@ -174,27 +184,78 @@ class Home extends Component {
   renderCovid19Api = async () => {
     const apiUrl = 'https://apis.ccbp.in/covid19-state-wise-data'
     const response = await fetch(apiUrl)
-    const data = await response.json()
     if (response.ok) {
+      const data = await response.json()
       this.setState({statesData: data, apiStatus: apiStatusConstants.success})
     }
   }
 
   renderStateDetailsView = () => {
-    const {statesData} = this.state
+    const {statesData, statesList} = this.state
+
+    const ascendingSort = () => {
+      this.setState(prevState => ({
+        statesList: [...prevState.statesList].sort((a, b) =>
+          a.state_name.localeCompare(b.state_name),
+        ),
+      }))
+    }
+
+    const descendingSort = () => {
+      this.setState(prevState => ({
+        statesList: [...prevState.statesList].sort((a, b) =>
+          b.state_name.localeCompare(a.state_name),
+        ),
+      }))
+    }
     return (
-      <div className="state-details-container">
-        <div className="state-details-heading">
-          <p className="state-name-heading">States/UT</p>
-          <p className="state-confirmed-heading">Confirmed</p>
-          <p className="state-active-heading">Active</p>
-          <p className="state-recovered-heading">Recovered</p>
-          <p className="state-deceased-heading">Deceased</p>
-          <p className="state-population-heading">Population</p>
+      <div className='state-details-container' testid='stateWiseCovidDataTable'>
+        <div className='state-details-heading'>
+          <div className='states-name-heading-container'>
+            <p className='states-name-heading'>States/UT</p>
+            <div className='icons-container'>
+              <button
+                type='button'
+                className='sorting-icon'
+                testid='ascendingSort'
+                onClick={ascendingSort}
+              >
+                <FcGenericSortingAsc size='20' />
+              </button>
+              <button
+                type='button'
+                className='sorting-icon'
+                testid='descendingSort'
+                onClick={descendingSort}
+              >
+                <FcGenericSortingDesc size='20' />
+              </button>
+            </div>
+          </div>
+          <div className='table-column-container'>
+            <p className='states-confirmed-heading'>Confirmed</p>
+          </div>
+          <div className='table-column-container'>
+            <p className='states-active-heading'>Active</p>
+          </div>
+          <div className='table-column-container'>
+            <p className='states-recovered-heading'>Recovered</p>
+          </div>
+          <div className='table-column-container'>
+            <p className='states-deceased-heading'>Deceased</p>
+          </div>
+          <div className='table-column-container'>
+            <p className='states-population-heading'>Population</p>
+          </div>
         </div>
-        <ul className="states-Detailed-container">
+        <hr className='line' />
+        <ul className='states-detailed-container'>
           {statesList.map(state => (
-            <StateDetails stateDetails={state} statesData={statesData} />
+            <StateDetails
+              key={state.stateCode}
+              stateDetails={state}
+              statesData={statesData}
+            />
           ))}
         </ul>
       </div>
@@ -208,20 +269,20 @@ class Home extends Component {
     const {searchInput} = this.state
     return (
       <>
-        <div className="home-main-container">
-          <div className="search-container">
-            <FaSearch className="search-icon" />
+        <div className='home-main-container'>
+          <div className='search-container'>
+            <BsSearch className='search-icon' />
             <input
-              type="search"
-              placeholder="Enter the State"
+              type='search'
+              placeholder='Enter the State'
               value={searchInput}
               onChange={onChangeSearch}
-              className="search-item"
+              className='search-item'
             />
           </div>
-          {searchInput.length > 0 && this.renderSearchList()}
-          {this.renderCardsContainer()}
-          {this.renderStateDetailsView()}
+          <li>{searchInput.length > 0 && this.renderSearchList()}</li>
+          <li>{this.renderCardsContainer()}</li>
+          <li>{this.renderStateDetailsView()}</li>
         </div>
         <Footer />
       </>
@@ -229,8 +290,8 @@ class Home extends Component {
   }
 
   renderLoaderView = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="TailSpin" color="#007bff" width={80} height={80} />
+    <div className='loader-container' testid='homeRouteLoader'>
+      <Loader type='TailSpin' color='#007bff' width={80} height={80} />
     </div>
   )
 
@@ -248,19 +309,19 @@ class Home extends Component {
 
   renderSearchList = () => {
     const {searchInput} = this.state
-    const filteredStates = statesList.filter(state =>
+    const filteredStates = initialStatesList.filter(state =>
       state.state_name.toLowerCase().includes(searchInput.toLowerCase()),
     )
     return (
-      <ul className="states-list-container">
+      <ul className='states-list-container' testid='searchResultsUnorderedList'>
         {filteredStates.map(state => (
-          <li className="state-list-item" key={state.state_code}>
-            <p className="state-name">{state.state_name}</p>
-            <button type="button" className="state-list">
-              <p className="state-code">{state.state_code}</p>
-              <p className="icon-container">
-                <FaChevronRight className="arrow-icon" />
-              </p>
+          <li className='state-list-item' key={state.stateCode}>
+            <Link to={`/state/${state.stateCode}`} className='states-link-item'>
+              <p className='state-name'>{state.state_name}</p>
+            </Link>
+            <button type='button' className='state-list'>
+              <p className='state-code'>{state.stateCode}</p>
+              <BiChevronRightSquare className='arrow-icon' />
             </button>
           </li>
         ))}
@@ -275,9 +336,9 @@ class Home extends Component {
     let deceasedCases = 0
     let confirmedCases = 0
 
-    statesList.forEach(eachState => {
-      if (statesData[eachState.state_code]) {
-        const {total} = statesData[eachState.state_code]
+    initialStatesList.forEach(eachState => {
+      if (statesData[eachState.stateCode]) {
+        const {total} = statesData[eachState.stateCode]
         confirmedCases += total.confirmed ? total.confirmed : 0
         recoveredCases += total.recovered ? total.recovered : 0
         deceasedCases += total.deceased ? total.deceased : 0
@@ -287,47 +348,50 @@ class Home extends Component {
     activeCases += confirmedCases - (recoveredCases + deceasedCases)
 
     return (
-      <div className="cards-container">
-        <div className="confirmed-card">
-          <p className="confirmed-heading">Confirmed</p>
+      <div className='cards-container'>
+        <div className='confirmed-card' testid='countryWideConfirmedCases'>
+          <p className='confirmed-heading'>Confirmed</p>
           <img
-            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/check-mark_1_nioget.png"
-            className="recovered-icon"
+            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/check-mark_1_nioget.png'
+            alt='country wide confirmed cases pic'
+            className='confirmed-icon'
           />
-          <p className="confirmed-count">{confirmedCases}</p>
+          <p className='confirmed-count'>{confirmedCases}</p>
         </div>
-        <div className="active-card">
-          <p className="active-heading">Active</p>
+        <div className='active-card' testid='countryWideActiveCases'>
+          <p className='active-heading'>Active</p>
           <img
-            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047058/protection_1_vmyldi.png"
-            className="recovered-icon"
+            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047058/protection_1_vmyldi.png'
+            alt='country wide active cases pic'
+            className='active-icon'
           />
-          <p className="active-count">{activeCases}</p>
+          <p className='active-count'>{activeCases}</p>
         </div>
-        <div className="recovered-card">
-          <p className="recovered-heading">Recovered</p>
+        <div className='recovered-card' testid='countryWideRecoveredCases'>
+          <p className='recovered-heading'>Recovered</p>
           <img
-            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738046946/recovered_1_wtxghq.png"
-            className="recovered-icon"
+            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738046946/recovered_1_wtxghq.png'
+            alt='country wide recovered cases pic'
+            className='recovered-icon'
           />
-          <p className="recovered-count">{recoveredCases}</p>
+          <p className='recovered-count'>{recoveredCases}</p>
         </div>
-        <div className="deceased-card">
-          <p className="deceased-heading">Deceased</p>
+        <div className='deceased-card' testid='countryWideDeceasedCases'>
+          <p className='deceased-heading'>Deceased</p>
           <img
-            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/breathing_1_g7n6fz.png"
-            className="deceased-icon"
+            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/breathing_1_g7n6fz.png'
+            alt='country wide deceased cases pic'
+            className='deceased-icon'
           />
-          <p className="deceased-count">{deceasedCases}</p>
+          <p className='deceased-count'>{deceasedCases}</p>
         </div>
       </div>
     )
   }
 
   render() {
-    const {searchInput} = this.state
     return (
-      <div className="home-container">
+      <div className='home-container'>
         <Header />
         {this.renderContent()}
       </div>

@@ -1,9 +1,9 @@
 .home-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
   background-color: #161625;
   min-height: 100vh;
 }
@@ -18,8 +18,6 @@
 
 .search-container {
   background-color: #2f2f43;
-  width: 60%;
-  height: 64px;
   padding: 7px 16px 7px 16px;
   margin-top: 20px;
   color: #94a3b8;
@@ -45,7 +43,6 @@
 }
 
 .states-list-container {
-  width: 60%;
   padding-left: 0px;
   display: flex;
   flex-direction: column;
@@ -73,7 +70,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 12%;
   background-color: #0c2d2d;
   border: 0px;
   border-radius: 4px;
@@ -96,15 +92,12 @@
 
 .arrow-icon {
   color: #facc15;
-  font-size: 12px;
 }
 
-.cards-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
-  margin-top: 60px;
+.states-link-item {
+  width: 80%;
+  text-decoration: none;
+  color: #64748b;
 }
 
 .confirmed-card {
@@ -114,7 +107,6 @@
   align-items: center;
   color: #ff073a;
   cursor: pointer;
-  width: 23%;
   transition: background-color 0.3s;
   padding: 10px 30px 10px 30px;
 }
@@ -124,20 +116,8 @@
   border-radius: 5px;
 }
 
-.confirmed-heading {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-}
-
 .confirmed-icon {
-  width: 20%;
-}
-
-.confirmed-count {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 24px;
+  width: 24%;
 }
 
 .active-card {
@@ -149,7 +129,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
   padding: 10px 30px 10px 30px;
-  width: 23%;
 }
 
 .active-card:hover {
@@ -157,20 +136,8 @@
   border-radius: 5px;
 }
 
-.active-heading {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-}
-
 .active-icon {
-  width: 20%;
-}
-
-.active-count {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 24px;
+  width: 24%;
 }
 
 .recovered-card {
@@ -182,7 +149,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
   padding: 10px 30px 10px 30px;
-  width: 23%;
 }
 
 .recovered-card:hover {
@@ -190,20 +156,8 @@
   border-radius: 5px;
 }
 
-.recovered-heading {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-}
-
 .recovered-icon {
-  width: 20%;
-}
-
-.recovered-count {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 24px;
+  width: 24%;
 }
 
 .deceased-card {
@@ -215,7 +169,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 10px 30px 10px 30px;
-  width: 23%;
 }
 
 .deceased-card:hover {
@@ -223,28 +176,15 @@
   border-radius: 5px;
 }
 
-.deceased-heading {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-}
-
 .deceased-icon {
-  width: 20%;
-}
-
-.deceased-count {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 24px;
+  width: 24%;
 }
 
 .state-details-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  width: 70%;
   border: 1px solid #475569;
   border-radius: 12px;
   color: #f8fafc;
@@ -258,45 +198,344 @@
   align-items: center;
   width: 100%;
   padding: 5px 15px 5px 15px;
-  border-bottom: 1px solid #475569;
 }
 
-.states-Detailed-container {
-  padding-left: 0px;
+.line {
+  border: 1px solid #475569;
   width: 100%;
 }
 
-.state-name-heading {
-  width: 25%;
-  font-size: 18px;
+@media (max-width: 767px) {
+  .search-container {
+    width: 80%;
+    height: 48px;
+  }
+
+  .states-list-container {
+    width: 75%;
+  }
+
+  .state-list {
+    width: 20%;
+    height: 40px;
+  }
+
+  .state-list-item {
+    padding: 5px 10px 5px 10px;
+  }
+
+  .arrow-icon {
+    font-size: 16px;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  .confirmed-card {
+    width: 48%;
+  }
+
+  .confirmed-heading {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+
+  .confirmed-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .active-card {
+    width: 48%;
+  }
+
+  .active-heading {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+
+  .active-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .recovered-card {
+    width: 48%;
+  }
+
+  .recovered-heading {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+
+  .recovered-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .deceased-card {
+    width: 48%;
+  }
+
+  .deceased-heading {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+
+  .deceased-count {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-name-heading {
+    font-size: 16px;
+  }
+
+  .states-confirmed-heading {
+    width: 130px;
+    font-size: 16px;
+    text-align: right;
+    overflow-x: auto;
+  }
+
+  .states-active-heading {
+    width: 130px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .line {
+    border: 1px solid #475569;
+    width: 880px;
+    overflow-x: auto;
+    margin-top: 0px;
+  }
+
+  .states-deceased-heading {
+    width: 130px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .states-recovered-heading {
+    width: 130px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .states-population-heading {
+    width: 130px;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .state-details-container {
+    max-width: 80%;
+    overflow-x: scroll;
+  }
+
+  .states-name-heading-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 320px;
+  }
+
+  .icons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    padding: 20px;
+  }
+
+  .sorting-icon {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+  }
+
+  .states-detailed-container {
+    padding-left: 0px;
+    min-width: 200px;
+    max-width: 350px;
+    /* overflow-x: auto; */
+  }
 }
 
-.state-confirmed-heading {
-  width: 15%;
-  font-size: 18px;
-  text-align: right;
-}
+@media (min-width: 768px) {
+  .search-container {
+    width: 60%;
+    height: 64px;
+  }
 
-.state-active-heading {
-  width: 15%;
-  font-size: 18px;
-  text-align: right;
-}
+  .states-list-container {
+    width: 60%;
+  }
 
-.state-deceased-heading {
-  width: 15%;
-  font-size: 18px;
-  text-align: right;
-}
+  .state-list {
+    width: 12%;
+  }
 
-.state-recovered-heading {
-  width: 15%;
-  font-size: 18px;
-  text-align: right;
-}
+  .arrow-icon {
+    font-size: 18px;
+  }
 
-.state-population-heading {
-  width: 15%;
-  font-size: 18px;
-  text-align: right;
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-top: 60px;
+  }
+
+  .confirmed-card {
+    width: 23%;
+  }
+
+  .confirmed-heading {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .confirmed-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .active-card {
+    width: 23%;
+  }
+
+  .active-heading {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .active-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .recovered-card {
+    width: 23%;
+  }
+
+  .recovered-heading {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .recovered-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .deceased-card {
+    width: 23%;
+  }
+
+  .deceased-heading {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .deceased-count {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .state-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1156px;
+    border: 1px solid #475569;
+    border-radius: 12px;
+    color: #f8fafc;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .state-details-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 15px 5px 15px;
+  }
+
+  .table-column-container {
+    width: 15%;
+  }
+
+  .states-detailed-container {
+    padding-left: 0px;
+    width: 100%;
+  }
+
+  .state-name-heading {
+    font-size: 18px;
+  }
+
+  .states-confirmed-heading {
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .states-active-heading {
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .states-deceased-heading {
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .states-recovered-heading {
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .states-population-heading {
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .states-name-heading-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+  }
+
+  .sorting-icon {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+  }
 }
