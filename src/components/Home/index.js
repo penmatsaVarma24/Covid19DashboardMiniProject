@@ -209,47 +209,47 @@ class Home extends Component {
       }))
     }
     return (
-      <div className='state-details-container' testid='stateWiseCovidDataTable'>
-        <div className='state-details-heading'>
-          <div className='states-name-heading-container'>
-            <p className='states-name-heading'>States/UT</p>
-            <div className='icons-container'>
+      <div className="state-details-container" testid="stateWiseCovidDataTable">
+        <div className="state-details-heading">
+          <div className="states-name-heading-container">
+            <p className="states-name-heading">States/UT</p>
+            <div className="icons-container">
               <button
-                type='button'
-                className='sorting-icon'
-                testid='ascendingSort'
+                type="button"
+                className="sorting-icon"
+                testid="ascendingSort"
                 onClick={ascendingSort}
               >
-                <FcGenericSortingAsc size='20' />
+                <FcGenericSortingAsc size="20" />
               </button>
               <button
-                type='button'
-                className='sorting-icon'
-                testid='descendingSort'
+                type="button"
+                className="sorting-icon"
+                testid="descendingSort"
                 onClick={descendingSort}
               >
-                <FcGenericSortingDesc size='20' />
+                <FcGenericSortingDesc size="20" />
               </button>
             </div>
           </div>
-          <div className='table-column-container'>
-            <p className='states-confirmed-heading'>Confirmed</p>
+          <div className="table-column-container">
+            <p className="states-confirmed-heading">Confirmed</p>
           </div>
-          <div className='table-column-container'>
-            <p className='states-active-heading'>Active</p>
+          <div className="table-column-container">
+            <p className="states-active-heading">Active</p>
           </div>
-          <div className='table-column-container'>
-            <p className='states-recovered-heading'>Recovered</p>
+          <div className="table-column-container">
+            <p className="states-recovered-heading">Recovered</p>
           </div>
-          <div className='table-column-container'>
-            <p className='states-deceased-heading'>Deceased</p>
+          <div className="table-column-container">
+            <p className="states-deceased-heading">Deceased</p>
           </div>
-          <div className='table-column-container'>
-            <p className='states-population-heading'>Population</p>
+          <div className="table-column-container">
+            <p className="states-population-heading">Population</p>
           </div>
         </div>
-        <hr className='line' />
-        <ul className='states-detailed-container'>
+        <hr className="line" />
+        <ul className="states-detailed-container">
           {statesList.map(state => (
             <StateDetails
               key={state.stateCode}
@@ -269,20 +269,20 @@ class Home extends Component {
     const {searchInput} = this.state
     return (
       <>
-        <div className='home-main-container'>
-          <div className='search-container'>
-            <BsSearch className='search-icon' />
+        <div className="home-main-container">
+          <div className="search-container">
+            <BsSearch className="search-icon" />
             <input
-              type='search'
-              placeholder='Enter the State'
+              type="search"
+              placeholder="Enter the State"
               value={searchInput}
               onChange={onChangeSearch}
-              className='search-item'
+              className="search-item"
             />
           </div>
-          <li>{searchInput.length > 0 && this.renderSearchList()}</li>
-          <li>{this.renderCardsContainer()}</li>
-          <li>{this.renderStateDetailsView()}</li>
+          {searchInput.length > 0 && this.renderSearchList()}
+          {this.renderCardsContainer()}
+          {this.renderStateDetailsView()}
         </div>
         <Footer />
       </>
@@ -290,8 +290,8 @@ class Home extends Component {
   }
 
   renderLoaderView = () => (
-    <div className='loader-container' testid='homeRouteLoader'>
-      <Loader type='TailSpin' color='#007bff' width={80} height={80} />
+    <div className="loader-container" testid="homeRouteLoader">
+      <Loader type="TailSpin" color="#007bff" width={80} height={80} />
     </div>
   )
 
@@ -313,15 +313,15 @@ class Home extends Component {
       state.state_name.toLowerCase().includes(searchInput.toLowerCase()),
     )
     return (
-      <ul className='states-list-container' testid='searchResultsUnorderedList'>
+      <ul className="states-list-container" testid="searchResultsUnorderedList">
         {filteredStates.map(state => (
-          <li className='state-list-item' key={state.stateCode}>
-            <Link to={`/state/${state.stateCode}`} className='states-link-item'>
-              <p className='state-name'>{state.state_name}</p>
+          <li className="state-list-item" key={state.stateCode}>
+            <Link to={`/state/${state.stateCode}`} className="states-link-item">
+              <p className="state-name">{state.state_name}</p>
             </Link>
-            <button type='button' className='state-list'>
-              <p className='state-code'>{state.stateCode}</p>
-              <BiChevronRightSquare className='arrow-icon' />
+            <button type="button" className="state-list">
+              <p className="state-code">{state.stateCode}</p>
+              <BiChevronRightSquare className="arrow-icon" />
             </button>
           </li>
         ))}
@@ -348,42 +348,42 @@ class Home extends Component {
     activeCases += confirmedCases - (recoveredCases + deceasedCases)
 
     return (
-      <div className='cards-container'>
-        <div className='confirmed-card' testid='countryWideConfirmedCases'>
-          <p className='confirmed-heading'>Confirmed</p>
+      <div className="cards-container">
+        <div className="confirmed-card" testid="countryWideConfirmedCases">
+          <p className="confirmed-heading">Confirmed</p>
           <img
-            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/check-mark_1_nioget.png'
-            alt='country wide confirmed cases pic'
-            className='confirmed-icon'
+            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/check-mark_1_nioget.png"
+            alt="country wide confirmed cases pic"
+            className="confirmed-icon"
           />
-          <p className='confirmed-count'>{confirmedCases}</p>
+          <p className="confirmed-count">{confirmedCases}</p>
         </div>
-        <div className='active-card' testid='countryWideActiveCases'>
-          <p className='active-heading'>Active</p>
+        <div className="active-card" testid="countryWideActiveCases">
+          <p className="active-heading">Active</p>
           <img
-            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047058/protection_1_vmyldi.png'
-            alt='country wide active cases pic'
-            className='active-icon'
+            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047058/protection_1_vmyldi.png"
+            alt="country wide active cases pic"
+            className="active-icon"
           />
-          <p className='active-count'>{activeCases}</p>
+          <p className="active-count">{activeCases}</p>
         </div>
-        <div className='recovered-card' testid='countryWideRecoveredCases'>
-          <p className='recovered-heading'>Recovered</p>
+        <div className="recovered-card" testid="countryWideRecoveredCases">
+          <p className="recovered-heading">Recovered</p>
           <img
-            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738046946/recovered_1_wtxghq.png'
-            alt='country wide recovered cases pic'
-            className='recovered-icon'
+            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738046946/recovered_1_wtxghq.png"
+            alt="country wide recovered cases pic"
+            className="recovered-icon"
           />
-          <p className='recovered-count'>{recoveredCases}</p>
+          <p className="recovered-count">{recoveredCases}</p>
         </div>
-        <div className='deceased-card' testid='countryWideDeceasedCases'>
-          <p className='deceased-heading'>Deceased</p>
+        <div className="deceased-card" testid="countryWideDeceasedCases">
+          <p className="deceased-heading">Deceased</p>
           <img
-            src='https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/breathing_1_g7n6fz.png'
-            alt='country wide deceased cases pic'
-            className='deceased-icon'
+            src="https://res.cloudinary.com/dt4si2qdg/image/upload/v1738047057/breathing_1_g7n6fz.png"
+            alt="country wide deceased cases pic"
+            className="deceased-icon"
           />
-          <p className='deceased-count'>{deceasedCases}</p>
+          <p className="deceased-count">{deceasedCases}</p>
         </div>
       </div>
     )
@@ -391,7 +391,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className='home-container'>
+      <div className="home-container">
         <Header />
         {this.renderContent()}
       </div>

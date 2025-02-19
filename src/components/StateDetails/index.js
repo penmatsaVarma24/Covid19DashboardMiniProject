@@ -9,7 +9,12 @@ class StateDetails extends Component {
     const {statesData} = this.props
     const {stateDetails} = this.props
     const {stateCode} = stateDetails
+
     const filteredData = statesData[stateCode]
+
+    if (!filteredData) {
+      return null
+    }
     console.log(filteredData)
     const {meta, total} = filteredData
     const {population} = meta
