@@ -155,7 +155,7 @@ class Charts extends Component {
       <div className="barchart-container">{this.renderBarGraphs()}</div>
 
       <h1 className="charts-title">Daily Spread Trends</h1>
-      <div testid="lineChartsContainer" className="barcharts-container">
+      <div className="barcharts-container">
         <div className="charts confirmed-background">
           {this.graph('confirmed', '#FF073A')}
         </div>
@@ -201,3 +201,5 @@ class Charts extends Component {
 }
 
 export default Charts
+
+//  testid="lineChartsContainer"

@@ -427,7 +427,7 @@ class StateWiseDetails extends Component {
 
   render() {
     return (
-      <div className="state-wise-main-container">
+      <div className="state-wise-main-container" testid="lineChartsContainer">
         <Header />
         {this.renderContent()}
       </div>

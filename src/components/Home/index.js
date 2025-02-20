@@ -315,15 +315,16 @@ class Home extends Component {
     return (
       <ul className="states-list-container" testid="searchResultsUnorderedList">
         {filteredStates.map(state => (
-          <li className="state-list-item" key={state.stateCode}>
-            <Link to={`/state/${state.stateCode}`} className="states-link-item">
+          <Link to={`/state/${state.stateCode}`} className="states-link-item">
+            <li className="state-list-item" key={state.stateCode}>
               <p className="state-name">{state.state_name}</p>
-            </Link>
-            <button type="button" className="state-list">
-              <p className="state-code">{state.stateCode}</p>
-              <BiChevronRightSquare className="arrow-icon" />
-            </button>
-          </li>
+
+              <button type="button" className="state-list">
+                <p className="state-code">{state.stateCode}</p>
+                <BiChevronRightSquare className="arrow-icon" />
+              </button>
+            </li>
+          </Link>
         ))}
       </ul>
     )
